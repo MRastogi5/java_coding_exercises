@@ -1,9 +1,26 @@
 package com.techreturners.exercise005;
 
+import java.util.ArrayList;
+
 public class Exercise005 {
 
-    public boolean isPangram(String input) {
-        throw new UnsupportedOperationException("You can delete this statement and add your code here.");
-    }
+	public boolean isPangram(String input) {
 
+		int ascIIStart = 97;
+		int ascIIEnd = 122;
+		String lowerCase = input.toLowerCase();
+		ArrayList<Integer> intList = new ArrayList<Integer>();
+
+		lowerCase.chars().distinct().forEach((i) -> {
+			if (i >= ascIIStart && i <= ascIIEnd) {
+				intList.add(i);
+			}
+		});
+
+		if (intList.size() == 26) {
+			return true;
+		}
+
+		return false;
+	}
 }
