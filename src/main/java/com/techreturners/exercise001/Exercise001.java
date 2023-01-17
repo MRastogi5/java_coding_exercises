@@ -3,28 +3,34 @@ package com.techreturners.exercise001;
 import java.util.List;
 
 public class Exercise001 {
-    public String capitalizeWord(String word) {
-        // Add your code here
-        return "";
-    }
+	public String capitalizeWord(String word) {
+		word = word.substring(0, 1).toUpperCase() + word.substring(1);
+		return word;
+	}
 
-    public String generateInitials(String firstName, String lastName) {
-        // Add your code here
-        return "";
-    }
+	public String generateInitials(String firstName, String lastName) {
+		String initial = firstName.substring(0, 1).toUpperCase() + "." + lastName.substring(0, 1).toUpperCase();
+		return initial;
+	}
 
-    public double addVat(double originalPrice, double vatRate) {
-        // Add your code here
-        return 0.0;
-    }
+	public double addVat(double originalPrice, double vatRate) {
+		double vatPrice = (originalPrice + (originalPrice * vatRate / 100));
+		return vatPrice;
+	}
 
-    public String reverse(String sentence) {
-        // Add your code here
-        return "";
-    }
+	public String reverse(String sentence) {
+		StringBuilder str = new StringBuilder(sentence);
+		return str.reverse().toString();
+	}
 
-    public int countLinuxUsers(List<User> users) {
-        // Add your code here
-        return 0;
-    }
+	public int countLinuxUsers(List<User> users) {
+		int count = 0;
+
+		for (User user : users) {
+			if (user.getType().equals("Linux")) {
+				count++;
+			}
+		}
+		return count;
+	}
 }
