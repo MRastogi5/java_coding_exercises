@@ -1,5 +1,7 @@
 package com.techreturners.exercise001;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 public class Exercise001 {
@@ -15,6 +17,8 @@ public class Exercise001 {
 
 	public double addVat(double originalPrice, double vatRate) {
 		double vatPrice = (originalPrice + (originalPrice * vatRate / 100));
+		vatPrice = BigDecimal.valueOf(vatPrice).setScale(2, RoundingMode.DOWN).doubleValue();
+
 		return vatPrice;
 	}
 
