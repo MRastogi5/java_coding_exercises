@@ -60,5 +60,16 @@ public class Exercise005Test {
     public void checkSentenceWithNumbersIsAPangram() {
         assertTrue(ex005.isPangram("the 1 quick brown fox jumps over the 2 lazy dogs"));
     }
-
+    
+    @Test
+    public void checkNumberCaseSentenceIsNotAPangram() {
+        assertFalse(ex005.isPangram("1234567891011121314151617181920212223242526"));
+    }
+    
+    @Test
+    public void checkSpecialLettersIsNotPangram() {
+        assertFalse(ex005.isPangram("the quick brown f0x jumps 0ver the l@zy d0g"));
+    }
+    
+    
 }

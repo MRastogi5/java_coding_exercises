@@ -1,11 +1,11 @@
 package com.techreturners.exercise003;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class Exercise003Test {
 
@@ -46,6 +46,21 @@ public class Exercise003Test {
         String[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
 
         assertArrayEquals(expected, ex003.iceCreamFlavours());
+    }
+    
+    @Test
+    public void checkGetIceCreamCodeForEmpty() {
+       
+    	int expected = -1;
+        assertEquals(expected, ex003.getIceCreamCode(""));
+    }
+    
+    @Test
+    public void checkGetIceCreamCodeForRaspberry_Ripple() {
+        String iceCreamFlavour = "Raspberry_Ripple";
+        int expected = 1;
+
+        assertNotEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
 

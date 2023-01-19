@@ -8,6 +8,11 @@ public class Exercise005 {
 
 		int ascIIStart = 97;
 		int ascIIEnd = 122;
+		
+		if(input.isEmpty()) {
+			return false;
+		}
+		
 		String lowerCase = input.toLowerCase();
 		ArrayList<Integer> intList = new ArrayList<Integer>();
 

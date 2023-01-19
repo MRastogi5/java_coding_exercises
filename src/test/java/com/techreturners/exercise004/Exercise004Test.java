@@ -1,11 +1,12 @@
 package com.techreturners.exercise004;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class Exercise004Test {
 
@@ -36,6 +37,13 @@ public class Exercise004Test {
         assertEquals(expected, ex004.getDateTime());
     }
     
-    
+    @Test
+    public void checkGetDateTimeWhenDateAndTimeIsLeapYear() {
+
+        Exercise004 ex004 = new Exercise004(LocalDateTime.of(2020, Month.FEBRUARY, 29, 23, 59, 59, 0));
+        LocalDateTime expected = LocalDateTime.of(2051, Month.NOVEMBER, 8, 1, 46, 39);
+
+        assertEquals(expected, ex004.getDateTime());
+    }
 
 }
